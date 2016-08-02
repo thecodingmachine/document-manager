@@ -1,4 +1,17 @@
 {
+  "name": "mouf/document-manager",
+    "description": "Electronic Document Manager librairy",
+    "keywords": ["mouf", "document", "manager"],
+    "homepage": "http://mouf-php.com/packages/mouf/document-manager",
+    "type": "mouf-library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xavier HUBERTY",
+            "email": "x.huberty@thecodingmachine.com",
+            "homepage": "http://mouf-php.com"
+        }
+    ],
   "autoload": {
     "psr-4": {
       "Mouf\\Document\\Manager\\": "src/"
