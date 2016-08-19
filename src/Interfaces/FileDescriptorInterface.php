@@ -1,6 +1,6 @@
 <?php
 
-namespace Mouf\Document\Manager\Exceptions;
+namespace Mouf\Document\Manager\Interfaces;
 
 interface FileDescriptorInterface
 {
