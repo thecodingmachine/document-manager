@@ -19,6 +19,7 @@
 
   },
   "require": {
+    "php": ">=7",
     "mouf/mouf": "^2.0.0",
     "mouf/mvc.splash": "^8.0.0",
     "league/flysystem": "^1.0.25"

@@ -4,7 +4,7 @@ namespace Mouf\Document\Manager\Services;
 use League\Flysystem\Filesystem;
 use Mouf\Document\Manager\Interfaces\FileDescriptorDaoInterface;
 use Mouf\Document\Manager\Interfaces\FileDescriptorInterface;
-use Zend\Diactoros\UploadedFile;
+use Psr\Http\Message\UploadedFileInterface;
 
 class DocumentService
 {
@@ -34,14 +34,14 @@ class DocumentService
     }
 
     /**
-     * @param UploadedFile $file
+     * @param UploadedFileInterface $file
      * @param array $data
-     * @return bool
      */
-    public function write(UploadedFile $file, $data = []) : bool
+    public function write(UploadedFileInterface $file, $data = [])
     {
         $fileDescritor = $this->fileDescriptorDao->generate($file, $data);
-        return $this->fileSystem->write($fileDescritor->getPath(), $file->getStream());
+        $this->fileSystem->write($fileDescritor->getPath(), $file->getStream());
+        $this->fileDescriptorDao->save($fileDescritor);
     }
 
     /**
