@@ -34,6 +34,15 @@ class DocumentService
     }
 
     /**
+     * @param FileDescriptorInterface $fileDescriptor
+     * @return bool|false|resource
+     */
+    public function readStream(FileDescriptorInterface $fileDescriptor)
+    {
+        return $this->fileSystem->readStream($fileDescriptor->getPath());
+    }
+
+    /**
      * @param UploadedFileInterface $file
      * @param array $data
      */
